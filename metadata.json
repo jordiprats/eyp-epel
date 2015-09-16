@@ -1,6 +1,6 @@
 {
   "name": "eyp-epel",
-  "version": "3.1.7",
+  "version": "3.1.9",
   "author": "Jordi Prats",
   "summary": "Installs EPEL for CentOS 5,6 and 7",
   "license": "Apache-2.0",
