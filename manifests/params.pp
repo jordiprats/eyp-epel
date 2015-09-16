@@ -1,3 +1,13 @@
+# == Class: epel::params
+#
+# === Authors
+#
+# Author Name <jordi.prats@gmail.com>
+#
+# === Copyright
+#
+# Copyright 2015 Jordi Prats Catala
+#
 class epel::params {
   case $::osfamily {
     'redhat' : {
@@ -15,13 +25,13 @@ class epel::params {
           $sourcerpm = undef
         }
         default : {
-          fail("Unsupported RHEL/CentOS version! - $::operatingsystemrelease")
+          fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")
         }
       }
 
     }
     default  : {
-      fail("Unsupported OS!")
+      fail('Unsupported OS!')
     }
   }
 }

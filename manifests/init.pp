@@ -2,20 +2,27 @@
 #
 # === Authors
 #
-# Author Name <author@domain.com>
+# Author Name <jordi.prats@gmail.com>
 #
 # === Copyright
 #
-# Copyright 2015 Your name here, unless otherwise noted.
+# Copyright 2015 Jordi Prats Catala
 #
-class epel () inherits epel::params {
+class epel ($ensure='installed') inherits epel::params {
+
+  validate_re(
+              $ensure,
+              [ '^installed$', '^latest$', '^purged$' ],
+              "Not a valid package status: ${ensure}"
+              )
+
   exec { 'update-ca':
-    command => '/usr/bin/yum upgrade ca-certificates --disablerepo=epel* -y > /root/yum.ca-certificates.log',
-    creates => '/root/yum.ca-certificates.log',
+    command => '/usr/bin/yum upgrade ca-certificates --disablerepo=epel* -y > /var/log/yum.ca-certificates.log',
+    creates => '/var/log/yum.ca-certificates.log',
   }
 
   package { 'epel-release':
-    ensure   => installed,
+    ensure   => $ensure,
     provider => $epel::params::rpmprovider,
     source   => $epel::params::sourcerpm,
     require  => Exec['update-ca'],
