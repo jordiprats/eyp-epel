@@ -16,17 +16,17 @@ context "RH 5" do
 	end
 
 context "RH 6" do
-        let :facts do
-        {
-                :osfamily => 'RedHat',
-                :operatingsystemrelease => '6.1'
-        }
-        end
+	let :facts do
+	{
+	        :osfamily => 'RedHat',
+	        :operatingsystemrelease => '6.1'
+	}
+	end
 
-        it {
-                should contain_package('epel-release')
-        }
-        end
+	it {
+	        should contain_package('epel-release')
+	}
+end
 
 context "RH 7" do
         let :facts do
@@ -40,11 +40,11 @@ context "RH 7" do
                 should contain_package('epel-release')
         }
         end
-	
+
 context "unsupported OS" do
         let :facts do
         {
-                :osfamily => 'Debian',
+                :osfamily => 'Darwin',
         }
         end
 
@@ -53,4 +53,3 @@ context "unsupported OS" do
         }
         end
 end
-
