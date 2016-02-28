@@ -1,5 +1,7 @@
 # epel
 
+[![PRs Welcome](https://img.shields.io/badge/prs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 #### Table of Contents
 
 1. [Overview](#overview)
