@@ -1,13 +1,3 @@
-# == Class: epel::params
-#
-# === Authors
-#
-# Author Name <jordi.prats@gmail.com>
-#
-# === Copyright
-#
-# Copyright 2015 Jordi Prats Catala
-#
 class epel::params {
   case $::osfamily {
     'redhat' : {

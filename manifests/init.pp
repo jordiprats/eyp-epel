@@ -1,13 +1,3 @@
-# == Class: epel
-#
-# === Authors
-#
-# Author Name <jordi.prats@gmail.com>
-#
-# === Copyright
-#
-# Copyright 2015 Jordi Prats Catala
-#
 class epel ($ensure='installed') inherits epel::params {
 
   validate_re(
