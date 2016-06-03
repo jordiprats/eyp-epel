@@ -1,27 +1,32 @@
 class epel::params {
   case $::osfamily {
     'redhat' : {
-      case $::operatingsystemrelease {
-        /^5.*$/ : {
-          $rpmprovider = 'rpm'
-          $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm'
-        }
-        /^6.*$/ : {
-          $rpmprovider = 'rpm'
-          $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm'
-        }
-        /^7.*$/ : {
-          $rpmprovider = 'rpm'
-          $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
-        }
-        default : {
-          fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")
-        }
+      case $::operatingsystem {
+          'Fedora': { notice ("EPEL will not be installed on Fedora") }
+          'Amazon': { notice ("EPEL will not be managed on Amazon") }
+          default: {
+            case $::operatingsystemrelease {
+              /^5.*$/ : {
+                $rpmprovider = 'rpm'
+                $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm'
+              }
+              /^6.*$/ : {
+                $rpmprovider = 'rpm'
+                $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm'
+              }
+              /^7.*$/ : {
+                $rpmprovider = 'rpm'
+                $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
+              }
+              default : {
+                fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")
+              }
+            }
+          }
       }
-
     }
     default  : {
-      fail('Unsupported OS!')
+      notice ("${::operatingsystem} will not have the EPEL repository applied")
     }
   }
 }

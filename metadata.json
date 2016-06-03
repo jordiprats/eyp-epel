@@ -1,6 +1,6 @@
 {
   "name": "eyp-epel",
-  "version": "3.1.14",
+  "version": "3.1.15",
   "author": "eyp",
   "summary": "Setup the EPEL package repo",
   "license": "Apache-2.0",
