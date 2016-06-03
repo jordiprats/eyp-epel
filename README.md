@@ -42,7 +42,7 @@ class { 'epel': }
  - installed
  - latest
  - purged
- * manage_ca_certificates: update ca-certificates (needed to install EPEL) 
+* manage_ca_certificates: update ca-certificates (needed to install EPEL) 
 
 ## Reference
 
