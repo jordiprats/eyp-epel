@@ -14,15 +14,15 @@ class epel::params {
       case $::operatingsystemrelease {
         /^5.*$/ : {
           $rpmprovider = 'rpm'
-          $sourcerpm = 'http://mirror.uv.es/mirror/fedora-epel/5/x86_64/epel-release-5-4.noarch.rpm'
+          $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm'
         }
         /^6.*$/ : {
           $rpmprovider = 'rpm'
-          $sourcerpm = 'http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm'
+          $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm'
         }
         /^7.*$/ : {
-          $rpmprovider = 'yum'
-          $sourcerpm = undef
+          $rpmprovider = 'rpm'
+          $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
         }
         default : {
           fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")
