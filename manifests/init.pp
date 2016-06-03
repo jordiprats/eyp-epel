@@ -10,8 +10,9 @@ class epel ($ensure='installed', $manage_ca_certificates=true) inherits epel::pa
   {
     #yum check-update
     exec { 'update-ca':
-      command => '/usr/bin/yum upgrade ca-certificates --disablerepo=epel* -y > /var/log/yum.ca-certificates.log',
-      unless => '/usr/bin/yum check-update ca-certificates',
+      command => '/usr/bin/yum upgrade ca-certificates --disablerepo =epel* -y > /var/log/yum.ca-certificates.log',
+      unless  => '/usr/bin/yum check-update ca-certificates',
+      before  => Package['epel-release'],
     }
   }
 
@@ -19,6 +20,5 @@ class epel ($ensure='installed', $manage_ca_certificates=true) inherits epel::pa
     ensure   => $ensure,
     provider => $epel::params::rpmprovider,
     source   => $epel::params::sourcerpm,
-    require  => Exec['update-ca'],
   }
 }

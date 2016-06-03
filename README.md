@@ -36,10 +36,13 @@ class { 'epel': }
 
 ## Usage
 
-* epel::ensure: Used to manage the epel-package:
+### epel
+
+* ensure: Used to manage the epel-package:
  - installed
  - latest
  - purged
+ * manage_ca_certificates: update ca-certificates (needed to install EPEL) 
 
 ## Reference
 
