@@ -2,8 +2,8 @@ class epel::params {
   case $::osfamily {
     'redhat' : {
       case $::operatingsystem {
-          'Fedora': { notice ("EPEL will not be installed on Fedora") }
-          'Amazon': { notice ("EPEL will not be managed on Amazon") }
+          'Fedora': { notice ("EPEL will not be installed on ${::operatingsystem} ${::operatingsystemrelease}") }
+          'Amazon': { notice ("EPEL will not be managed on ${::operatingsystem} ${::operatingsystemrelease}") }
           default: {
             case $::operatingsystemrelease {
               /^5.*$/ : {

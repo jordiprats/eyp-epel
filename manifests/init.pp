@@ -1,4 +1,4 @@
-class epel ($ensure='installed') inherits epel::params {
+class epel ($ensure='installed', $manage_ca_certificates=true) inherits epel::params {
 
   validate_re(
               $ensure,
@@ -6,9 +6,13 @@ class epel ($ensure='installed') inherits epel::params {
               "Not a valid package status: ${ensure}"
               )
 
-  exec { 'update-ca':
-    command => '/usr/bin/yum upgrade ca-certificates --disablerepo=epel* -y > /var/log/yum.ca-certificates.log',
-    creates => '/var/log/yum.ca-certificates.log',
+  if($manage_ca_certificates)
+  {
+    #yum check-update
+    exec { 'update-ca':
+      command => '/usr/bin/yum upgrade ca-certificates --disablerepo=epel* -y > /var/log/yum.ca-certificates.log',
+      unless => '/usr/bin/yum check-update ca-certificates',
+    }
   }
 
   package { 'epel-release':
