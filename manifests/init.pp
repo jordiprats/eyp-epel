@@ -6,6 +6,7 @@ class epel ($ensure='installed', $manage_ca_certificates=true) inherits epel::pa
               "Not a valid package status: ${ensure}"
               )
 
+  #TODO: eliminar exec update-ca duplicat
   if($manage_ca_certificates)
   {
     if versioncmp($::puppetversion, '3.8.0') < 0
