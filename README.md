@@ -1,6 +1,4 @@
-# epel
-
-[![PRs Welcome](https://img.shields.io/badge/prs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+# epel ![status ready](https://img.shields.io/badge/status-ready-brightgreen.svg) ![doc completed](https://img.shields.io/badge/doc-completed-brightgreen.svg)
 
 #### Table of Contents
 
@@ -42,7 +40,7 @@ class { 'epel': }
  - installed
  - latest
  - purged
-* manage_ca_certificates: update ca-certificates (needed to install EPEL) 
+* manage_ca_certificates: update ca-certificates (needed to install EPEL)
 
 ## Reference
 
