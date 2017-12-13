@@ -8,7 +8,9 @@ describe 'epel class' do
     it 'should work with no errors' do
       pp = <<-EOF
 
-      class { 'epel': }
+      class { 'epel':
+        enable_repo_epel => true,
+      }
 
       EOF
 
@@ -19,6 +21,14 @@ describe 'epel class' do
 
     describe package('epel-release') do
       it { is_expected.to be_installed }
+    end
+
+    it "qi de paquet" do
+      expect(shell("rpm -qi epel-release").exit_code).to be_zero
+    end
+
+    it "check repo" do
+      expect(shell("yum repolist | grep epel").exit_code).to be_zero
     end
 
   end

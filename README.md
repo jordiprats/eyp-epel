@@ -32,16 +32,24 @@ also update ca-certificates on the first run
 class { 'epel': }
 ```
 
-## Usage
+##  Usage
 
-### epel
-
-* ensure: Used to manage the epel-package:
- - installed
- - latest
- - purged
-* manage_ca_certificates: update ca-certificates (needed to install EPEL)
+```puppet
+class { 'epel':
+}
+```
 
 ## Reference
 
-* epel: Enables/disables epel-release
+### epel
+
+* ensure: Used to manage the **epel-release** package:
+ - installed
+ - purged
+* manage_ca_certificates: update ca-certificates (needed to install EPEL)
+* enable_repo_epel: enable/disable epel repo (default: true)
+* enable_repo_epel_debug: enable/disable epel debug repo (default: true)
+* enable_repo_epel_source: enable/disable epel source repo (default: true)
+* enable_repo_epel_testing: enable/disable epel-testing repo (default: true)
+* enable_repo_epel_testing_debug: enable/disable epel-testing debug repo (default: true)
+* enable_repo_epel_testing_source: enable/disable epel-testing source repo (default: true)
