@@ -9,7 +9,6 @@ describe 'epel class' do
       pp = <<-EOF
 
       class { 'epel':
-        enable_repo_epel => true,
       }
 
       EOF
