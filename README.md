@@ -1,4 +1,4 @@
-# epel ![status ready](https://img.shields.io/badge/status-ready-brightgreen.svg) ![doc completed](https://img.shields.io/badge/doc-completed-brightgreen.svg)
+# epel
 
 #### Table of Contents
 
