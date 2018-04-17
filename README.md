@@ -36,7 +36,12 @@ class { 'epel': }
 
 ```puppet
 class { 'epel':
-  enable_repo_epel => false,
+  enable_repo_epel                => false,
+  enable_repo_epel_debug          => false,
+  enable_repo_epel_source         => false,
+  enable_repo_epel_testing        => false,
+  enable_repo_epel_testing_debug  => false,
+  enable_repo_epel_testing_source => false,
 }
 ```
 
