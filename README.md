@@ -36,6 +36,7 @@ class { 'epel': }
 
 ```puppet
 class { 'epel':
+  enable_repo_epel => false,
 }
 ```
 
