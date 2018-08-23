@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.1.22
+
+* metadata lint
+
 ## 3.1.21
 
 * bugfix
