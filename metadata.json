@@ -1,6 +1,6 @@
 {
   "name": "eyp-epel",
-  "version": "3.1.22",
+  "version": "3.14.16",
   "author": "eyp",
   "summary": "Setup the EPEL package repo",
   "license": "Apache-2.0",
@@ -10,29 +10,29 @@
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": [ "5", "6", "7" ]
+      "operatingsystemrelease": [ "5", "6", "7", "8" ]
     },
     {
       "operatingsystem": "CentOS",
-      "operatingsystemrelease": [ "5", "6", "7" ]
+      "operatingsystemrelease": [ "5", "6", "7", "8" ]
     },
     {
       "operatingsystem": "Scientific",
-      "operatingsystemrelease": [ "5", "6", "7" ]
+      "operatingsystemrelease": [ "5", "6", "7", "8" ]
     },
     {
       "operatingsystem": "OEL",
-      "operatingsystemrelease": [ "5", "6", "7" ]
+      "operatingsystemrelease": [ "5", "6", "7", "8" ]
     },
     {
       "operatingsystem": "OracleLinux",
-      "operatingsystemrelease": [ "5", "6", "7" ]
+      "operatingsystemrelease": [ "5", "6", "7", "8" ]
     }
   ],
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 3.8.0"
+      "version_requirement": ">= 2.0.0"
     }
   ],
   "dependencies": [

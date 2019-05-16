@@ -25,11 +25,32 @@ also update ca-certificates on the first run
 
 * Installs a package called epel-release
 * Updates ca-certificates
+* Managed main epel repo
 
 ### Beginning with epel
 
 ```puppet
 class { 'epel': }
+```
+
+#### Force especific mirror for EPEL
+
+```puppet
+class { 'epel':
+  main_baseurl => "https://dl.fedoraproject.org/pub/epel/7/\$basearch",
+}
+```
+
+```
+[epel]
+
+name=Extra Packages for Enterprise Linux 7 - $basearch
+baseurl=https://dl.fedoraproject.org/pub/epel/7/$basearch
+#metalink=https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=$basearch
+failovermethod=priority
+enabled=1
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 ```
 
 ##  Usage
