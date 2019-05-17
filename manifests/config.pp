@@ -30,6 +30,8 @@ class epel::config inherits epel {
       }
     }
 
+    fail($epel__main_mirrorlist)
+
     yumrepo { 'epel':
       enabled        => bool2number($epel::main_enabled),
       baseurl        => $epel::main_baseurl,
