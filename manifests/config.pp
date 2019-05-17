@@ -2,17 +2,17 @@ class epel::config inherits epel {
 
   if($epel::manage_gpg)
   {
-    file { "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${::os_maj_release}":
+    file { "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}":
       ensure  => present,
       owner   => 'root',
       group   => 'root',
       mode    => '0644',
-      content => file("${module_name}/RPM-GPG-KEY-EPEL-${::os_maj_release}"),
+      content => file("${module_name}/RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}"),
     }
 
-    import_gpg_key { 'RPM-GPG-KEY-EPEL-${::os_maj_release}':
-      path    => "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${::os_maj_release}",
-      require => File["/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${::os_maj_release}"],
+    import_gpg_key { 'RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}':
+      path    => "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}",
+      require => File["/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}"],
     }
   }
 

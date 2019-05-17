@@ -1,7 +1,17 @@
 class epel::params
 {
 
-  if(versioncmp($::os_maj_release, '5') > 0)
+  if getvar('::operatingsystemmajrelease')
+  {
+    $os_maj_release = $::operatingsystemmajrelease
+  }
+  else
+  {
+    $os_versions    = split($::operatingsystemrelease, '[.]')
+    $os_maj_release = $os_versions[0]
+  }
+
+  if(versioncmp($os_maj_release, '5') > 0)
   {
     $url_path = 'metalink'
   }
@@ -10,13 +20,13 @@ class epel::params
     $url_path = 'mirrorlist'
   }
 
-  $main_mirrorlist = "https://mirrors.fedoraproject.org/${url_path}?repo=epel-${::os_maj_release}&arch=\$basearch"
+  $main_mirrorlist = "https://mirrors.fedoraproject.org/${url_path}?repo=epel-${os_maj_release}&arch=\$basearch"
 
   case $::osfamily
   {
     'redhat' :
     {
-      if(versioncmp($::os_maj_release, '5') > 0)
+      if(versioncmp($os_maj_release, '5') > 0)
       {
         $url_path = 'metalink'
       }
