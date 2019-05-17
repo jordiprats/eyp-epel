@@ -1,8 +1,8 @@
 class epel(
             $ensure                 = 'installed',
             $manage_ca_certificates = true,
-            $manage_main_repo       = true,
             $manage_gpg             = true,
+            $manage_main_repo       = true,
             $main_enabled           = true,
             $main_baseurl           = 'absent',
             $main_mirrorlist        = $epel::params::main_mirrorlist,

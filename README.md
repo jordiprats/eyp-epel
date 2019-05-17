@@ -76,8 +76,8 @@ class { 'epel':
 
 * **ensure**: Used to manage the **epel-release** package (default: installed)
 * **manage_ca_certificates**: update ca-certificates (needed to install EPEL) (default: true)
-* **manage_main_repo**:       = true,
 * **manage_gpg**:             = true,
+* **manage_main_repo**:       = true,
 * **main_enabled**:           = true,
 * **main_baseurl**:           = 'absent',
 * **main_mirrorlist**:        = $epel::params::main_mirrorlist,
