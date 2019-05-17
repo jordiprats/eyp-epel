@@ -18,15 +18,15 @@ class epel::config inherits epel {
 
   if($epel::manage_epel_repo)
   {
-    $epel_main_mirrorlist = $epel::main_baseurl ? {
+    $epel__main_mirrorlist = $epel::main_baseurl ? {
       'absent' => $epel::main_mirrorlist,
       default  => 'absent',
     }
 
     yumrepo { 'epel':
       enabled        => $epel::main_enabled,
-      baseurl        => $epel::repo_baseurl,
-      mirrorlist     => $epel_main_mirrorlist,
+      baseurl        => $epel::main_baseurl,
+      mirrorlist     => $epel__main_mirrorlist,
       failovermethod => $epel::main_failovermethod,
       proxy          => $epel::main_proxy,
       gpgcheck       => $epel::main_gpgcheck,
