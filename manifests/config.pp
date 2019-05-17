@@ -24,12 +24,12 @@ class epel::config inherits epel {
     }
 
     yumrepo { 'epel':
-      enabled        => $epel::main_enabled,
+      enabled        => bool2number($epel::main_enabled),
       baseurl        => $epel::main_baseurl,
       mirrorlist     => $epel__main_mirrorlist,
       failovermethod => $epel::main_failovermethod,
       proxy          => $epel::main_proxy,
-      gpgcheck       => $epel::main_gpgcheck,
+      gpgcheck       => bool2number($epel::main_gpgcheck),
       gpgkey         => $epel::main_gpgkey,
       descr          => $epel::main_description,
       exclude        => $epel::main_exclude,
