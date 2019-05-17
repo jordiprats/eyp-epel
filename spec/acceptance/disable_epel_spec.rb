@@ -9,7 +9,7 @@ describe 'epel class' do
       pp = <<-EOF
 
       class { 'epel':
-        main_baseurl => "https://systemadmin.es",
+        main_enabled => false,
       }
 
       EOF
@@ -28,11 +28,7 @@ describe 'epel class' do
     end
 
     it "check repo" do
-      expect(shell("yum repolist 2>/dev/null | grep -E '\bepel\b'").exit_code).to be_zero
-    end
-
-    it "check repo" do
-      expect(shell("grep systemadmin.es /etc/yum.repos.d/*").exit_code).to be_zero
+      expect(shell("yum repolist 2>/dev/null | grep -E '\bepel\b'; if [ $? -eq 0 ]; then /bin/false; else /bin/true; fi").exit_code).to be_zero
     end
 
   end
