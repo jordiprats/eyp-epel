@@ -16,7 +16,7 @@ class epel::config inherits epel {
     }
   }
 
-  if($epel::manage_epel_repo)
+  if($epel::manage_main_repo)
   {
     $epel__main_mirrorlist = $epel::main_baseurl ? {
       'absent' => $epel::main_mirrorlist,

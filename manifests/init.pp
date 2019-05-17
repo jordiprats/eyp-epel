@@ -1,7 +1,7 @@
 class epel(
             $ensure                 = 'installed',
             $manage_ca_certificates = true,
-            $manage_epel_repo       = true,
+            $manage_main_repo       = true,
             $manage_gpg             = true,
             $main_enabled           = true,
             $main_baseurl           = 'absent',
