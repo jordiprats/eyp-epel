@@ -18,9 +18,16 @@ class epel::config inherits epel {
 
   if($epel::manage_main_repo)
   {
-    $epel__main_mirrorlist = $epel::main_baseurl ? {
-      'absent' => $epel::main_mirrorlist,
-      default  => 'absent',
+    case $epel::main_baseurl
+    {
+      'absent':
+      {
+        $epel__main_mirrorlist = $epel::main_mirrorlist
+      }
+      default:
+      {
+        $epel__main_mirrorlist = 'absent'
+      }
     }
 
     yumrepo { 'epel':
