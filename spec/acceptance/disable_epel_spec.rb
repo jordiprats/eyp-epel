@@ -28,7 +28,7 @@ describe 'epel' do
     end
 
     it "check repo" do
-      expect(shell("yum repolist 2>/dev/null | grep -E '\bepel\b'; if [ $? -eq 0 ]; then /bin/false; else /bin/true; fi").exit_code).to be_zero
+      expect(shell("yum repolist 2>/dev/null | grep -E '\\bepel\\b'; if [ $? -eq 0 ]; then /bin/false; else /bin/true; fi").exit_code).to be_zero
     end
 
   end
