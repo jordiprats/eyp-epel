@@ -25,7 +25,7 @@ also update ca-certificates on the first run
 
 * Installs a package called epel-release
 * Updates ca-certificates
-* Managed main epel repo
+* Manages main epel repo
 
 ### Beginning with epel
 
