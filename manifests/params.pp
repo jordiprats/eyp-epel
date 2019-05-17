@@ -11,16 +11,7 @@ class epel::params
     $os_maj_release = $os_versions[0]
   }
 
-  if(versioncmp($os_maj_release, '5') > 0)
-  {
-    $url_path = 'metalink'
-  }
-  else
-  {
-    $url_path = 'mirrorlist'
-  }
-
-  $main_mirrorlist = "https://mirrors.fedoraproject.org/${url_path}?repo=epel-${os_maj_release}&arch=\$basearch"
+  $main_metalink = "https://mirrors.fedoraproject.org/metalink?repo=epel-${os_maj_release}&arch=\$basearch"
 
   case $::osfamily
   {

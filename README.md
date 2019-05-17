@@ -86,7 +86,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7
 * **manage_main_repo**: Whether to manage the main epel repo (default: true)
 * **main_enabled**: Whether to have the main epel repo enabled or not (default: true)
 * **main_baseurl**: Base URL for a specific mirror (default: not set)
-* **main_mirrorlist**: Where to get mirror list from (default: from **mirrors.fedoraproject.org**)
+* **main_metalink**: Where to get mirror list from (default: from **mirrors.fedoraproject.org**)
 * **main_failovermethod**: Failover method (default: priority)
 * **main_proxy**: Proxy usage (default: not set)
 * **main_gpgcheck**: Whether to check GPG (default: true)

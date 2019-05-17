@@ -22,20 +22,18 @@ class epel::config inherits epel {
     {
       'absent':
       {
-        $epel__main_mirrorlist = $epel::main_mirrorlist
+        $epel__main_metalink = $epel::main_metalink
       }
       default:
       {
-        $epel__main_mirrorlist = 'absent'
+        $epel__main_metalink = 'absent'
       }
     }
-
-    fail($epel__main_mirrorlist)
 
     yumrepo { 'epel':
       enabled        => bool2number($epel::main_enabled),
       baseurl        => $epel::main_baseurl,
-      mirrorlist     => $epel__main_mirrorlist,
+      metalink       => $epel__main_metalink,
       failovermethod => $epel::main_failovermethod,
       proxy          => $epel::main_proxy,
       gpgcheck       => bool2number($epel::main_gpgcheck),

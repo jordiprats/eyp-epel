@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.14.159
+
+* dropped CentOS 5 support
+
 ## 3.14.15
 
 * main EPEL repo management

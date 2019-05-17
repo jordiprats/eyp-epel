@@ -5,7 +5,7 @@ class epel(
             $manage_main_repo       = true,
             $main_enabled           = true,
             $main_baseurl           = 'absent',
-            $main_mirrorlist        = $epel::params::main_mirrorlist,
+            $main_metalink          = $epel::params::main_metalink,
             $main_failovermethod    = 'priority',
             $main_proxy             = 'absent',
             $main_gpgcheck          = true,
