@@ -1,9 +1,9 @@
 require 'spec_helper_acceptance'
 require_relative './version.rb'
 
-describe 'epel class' do
+describe 'epel' do
 
-  context 'basic setup' do
+  context 'disable' do
     # Using puppet_apply as a helper
     it 'should work with no errors' do
       pp = <<-EOF
