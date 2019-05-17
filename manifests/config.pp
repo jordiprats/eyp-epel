@@ -10,7 +10,7 @@ class epel::config inherits epel {
       content => file("${module_name}/RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}"),
     }
 
-    import_gpg_key { 'RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}':
+    epel::import_gpg_key { 'RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}':
       path    => "/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}",
       require => File["/etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-${epel::params::os_maj_release}"],
     }
