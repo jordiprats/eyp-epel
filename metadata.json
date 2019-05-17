@@ -2,7 +2,7 @@
   "name": "eyp-epel",
   "version": "3.14.159",
   "author": "eyp",
-  "summary": "Setup the EPEL package repo",
+  "summary": "EPEL repos management",
   "license": "Apache-2.0",
   "source": "https://github.com/jordiprats/eyp-epel",
   "project_page": "https://github.com/jordiprats/eyp-epel",
