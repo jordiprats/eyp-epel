@@ -46,7 +46,7 @@ class { 'epel':
 
 ### Disable EPEL
 
-```
+```puppet
 class { 'epel':
   main_enabled => false,
 }
