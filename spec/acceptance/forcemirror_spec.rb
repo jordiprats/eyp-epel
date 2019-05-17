@@ -31,8 +31,8 @@ describe 'epel' do
       expect(shell("yum repolist 2>/dev/null | grep -E '\\bepel\\b'").exit_code).to be_zero
     end
 
-    it "check repo" do
-      expect(shell("grep systemadmin.es /etc/yum.repos.d/*").exit_code).to be_zero
+    it "check forced mirror" do
+      expect(shell("grep systemadmin.es /etc/yum.repos.d/epel.repo").exit_code).to be_zero
     end
 
   end
