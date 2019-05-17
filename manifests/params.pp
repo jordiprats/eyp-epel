@@ -26,14 +26,6 @@ class epel::params
   {
     'redhat' :
     {
-      if(versioncmp($os_maj_release, '5') > 0)
-      {
-        $url_path = 'metalink'
-      }
-      else
-      {
-        $url_path = 'mirrorlist'
-      }
 
       case $::operatingsystem
       {

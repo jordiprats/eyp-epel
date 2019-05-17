@@ -9,6 +9,7 @@ describe 'epel class' do
       pp = <<-EOF
 
       class { 'epel':
+        main_baseurl => "https://dl.fedoraproject.org/pub/epel/7/\$basearch",
       }
 
       EOF
@@ -27,7 +28,7 @@ describe 'epel class' do
     end
 
     it "check repo" do
-      expect(shell("yum repolist | grep epel").exit_code).to be_zero
+      expect(shell("yum repolist 2>/dev/null | grep -E 'epel\b'").exit_code).to be_zero
     end
 
   end
