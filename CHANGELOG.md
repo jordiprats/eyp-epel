@@ -1,5 +1,7 @@
 # CHANGELOG
 
+## 3.14.1592
+
 ## 3.14.159
 
 * dropped CentOS 5 support

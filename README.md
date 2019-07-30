@@ -16,8 +16,8 @@ Enables EPEL repository
 
 ## Module Description
 
-This module enables the EPEL repository for RH 5/6/7 and derivatives. It will
-also update ca-certificates on the first run
+This module enables the EPEL repository for RHEL 6 and 7 and derivatives. It will
+also update ca-certificates on the first run, checking for updates daily.
 
 ## Setup
 

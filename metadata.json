@@ -1,12 +1,16 @@
 {
   "name": "eyp-epel",
-  "version": "3.14.159",
+  "version": "3.14.1592",
   "author": "eyp",
   "summary": "EPEL repos management",
   "license": "Apache-2.0",
   "source": "https://github.com/jordiprats/eyp-epel",
   "project_page": "https://github.com/jordiprats/eyp-epel",
   "issues_url": "https://github.com/jordiprats/eyp-epel/issues",
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"},
+    {"name":"eyp/eyplib","version_requirement":">= 0.1.0 < 9.9.9"}
+  ]
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
@@ -34,9 +38,5 @@
       "name": "puppet",
       "version_requirement": ">= 2.0.0"
     }
-  ],
-  "dependencies": [
-    {"name":"puppetlabs/stdlib","version_requirement":">= 1.0.0 < 9.9.9"},
-    {"name":"eyp/eyplib","version_requirement":">= 0.1.0 < 9.9.9"}
   ]
 }

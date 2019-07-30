@@ -5,7 +5,7 @@ class epel::install inherits epel {
   {
     if versioncmp($::puppetversion, '3.8.0') < 0
     {
-      #yum check-update
+      # yum check-update
       exec { 'update-ca':
         command => '/usr/bin/yum upgrade ca-certificates --disablerepo =epel* -y',
         unless  => '/usr/bin/yum check-update ca-certificates',
