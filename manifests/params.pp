@@ -45,6 +45,13 @@ class epel::params
               {
                 $rpmprovider = 'rpm'
                 $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm'
+
+                # NOTA:
+                # on RHEL 8 it is recommended to also enable the codeready-builder-for-rhel-8-*-rpms repository since EPEL packages may depend on packages from it:
+                # # subscription-manager repos --enable "codeready-builder-for-rhel-8-*-rpms"
+                # on CentOS 8 it is recommended to also enable the PowerTools repository since EPEL packages may depend on packages from it:
+                # # dnf config-manager --set-enabled PowerTools
+
               }
               default :
               {
