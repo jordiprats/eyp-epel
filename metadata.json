@@ -1,6 +1,6 @@
 {
   "name": "eyp-epel",
-  "version": "3.14.1592",
+  "version": "3.141.592",
   "author": "eyp",
   "summary": "EPEL repos management",
   "license": "Apache-2.0",

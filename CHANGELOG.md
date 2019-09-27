@@ -1,8 +1,12 @@
 # CHANGELOG
 
-## 3.14.1592
+## 3.141.592
 
 * added support for CentOS 8 / RHEL 8
+
+## 3.14.1592
+
+* minor changes
 
 ## 3.14.159
 
