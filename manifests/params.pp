@@ -41,6 +41,11 @@ class epel::params
                 $rpmprovider = 'rpm'
                 $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm'
               }
+              /^8.*$/ :
+              {
+                $rpmprovider = 'rpm'
+                $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm'
+              }
               default :
               {
                 fail("Unsupported RHEL/CentOS version! - ${::operatingsystemrelease}")
