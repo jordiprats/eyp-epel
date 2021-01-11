@@ -13,7 +13,7 @@ class epel::params
 
   $main_metalink = "https://mirrors.fedoraproject.org/metalink?repo=epel-${os_maj_release}&arch=\$basearch"
 
-  case $::osfamily
+  case $facts['os']['family']
   {
     'redhat' :
     {
