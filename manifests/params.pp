@@ -29,12 +29,12 @@ class epel::params
               /^5.*$/ :
               {
                 $rpmprovider = 'rpm'
-                $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-5.noarch.rpm'
+                $sourcerpm = 'https://archives.fedoraproject.org/pub/archive/epel/5/x86_64/epel-release-5-4.noarch.rpm'
               }
               /^6.*$/ :
               {
                 $rpmprovider = 'rpm'
-                $sourcerpm = 'https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm'
+                $sourcerpm = 'https://archives.fedoraproject.org/pub/archive/epel/6/x86_64/epel-release-6-8.noarch.rpm'
               }
               /^7.*$/ :
               {

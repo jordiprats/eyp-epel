@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## 3.1415.92
+
+* fixed download links
+
 ## 3.141.592
 
 * added support for CentOS 8 / RHEL 8
